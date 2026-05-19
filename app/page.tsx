@@ -91,7 +91,7 @@ export default function BingoPage() {
           color: NAVY,
           fontSize: "clamp(19px, 2.8vw, 42px)",
           fontWeight: 900,
-          letterSpacing: "clamp(3px, 0.8vw, 10px)",
+          letterSpacing: "clamp(1px, 0.2vw, 3px)",
           textAlign: "center",
           lineHeight: 1,
         }}>
