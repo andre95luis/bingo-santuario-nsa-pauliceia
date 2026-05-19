@@ -178,8 +178,8 @@ export default function BingoPage() {
             <span style={{ fontSize: "clamp(24px, 3.6vw, 46px)", fontWeight: 900, color: allDone ? G.lo : "#ffffff", lineHeight: 1 }}>
               {drawn.size}
             </span>
-            <span style={{ fontSize: "14px", color: G.mid, fontWeight: 700 }}> / 75</span>
-            <div style={{ fontSize: "8px", color: G.mid, letterSpacing: "2px", marginTop: "3px", fontWeight: 700 }}>BOLAS SORTEADAS</div>
+            <span style={{ fontSize: "clamp(18px, 2.2vw, 28px)", color: G.mid, fontWeight: 900 }}> / 75</span>
+            <div style={{ fontSize: "clamp(11px, 1.2vw, 15px)", color: G.mid, letterSpacing: "2px", marginTop: "4px", fontWeight: 700 }}>BOLAS SORTEADAS</div>
             <div style={{ marginTop: "6px", height: "4px", background: "rgba(255,255,255,0.1)", borderRadius: "2px", overflow: "hidden" }}>
               <div style={{
                 height: "100%", width: `${(drawn.size / 75) * 100}%`,
@@ -192,17 +192,17 @@ export default function BingoPage() {
           {/* Histórico */}
           {recentBalls.length > 0 && (
             <div style={{ width: "100%", flexShrink: 0 }}>
-              <div style={{ fontSize: "7px", color: G.mid, letterSpacing: "3px", textAlign: "center", marginBottom: "7px", fontWeight: 700 }}>ÚLTIMAS BOLAS</div>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: "5px", justifyContent: "center" }}>
+              <div style={{ fontSize: "clamp(10px, 1.1vw, 14px)", color: G.mid, letterSpacing: "3px", textAlign: "center", marginBottom: "8px", fontWeight: 700 }}>ÚLTIMAS BOLAS</div>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "6px", justifyContent: "center" }}>
                 {recentBalls.map((n, i) => {
                   const l = letterOf(n); const c = COLS[l];
                   return (
                     <div key={n} style={{
-                      width: "30px", height: "30px", borderRadius: "50%",
+                      width: "clamp(36px, 4vw, 48px)", height: "clamp(36px, 4vw, 48px)", borderRadius: "50%",
                       background: `radial-gradient(circle at 35% 30%, ${c.color}cc, ${c.dark})`,
                       border: `1.5px solid ${G.mid}`,
                       color: "white", display: "flex", alignItems: "center", justifyContent: "center",
-                      fontSize: "10px", fontWeight: 900,
+                      fontSize: "clamp(12px, 1.4vw, 18px)", fontWeight: 900,
                       opacity: Math.max(0.2, 1 - i * 0.08), flexShrink: 0,
                     }}>
                       {n}
