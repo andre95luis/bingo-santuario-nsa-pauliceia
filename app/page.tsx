@@ -77,7 +77,7 @@ export default function BingoPage() {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        padding: "10px 24px",
+        padding: "22px 24px",
       }}>
         <div style={{
           color: NAVY,
