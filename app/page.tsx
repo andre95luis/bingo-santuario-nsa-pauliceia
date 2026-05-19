@@ -103,8 +103,8 @@ export default function BingoPage() {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          padding: "14px 12px",
-          gap: "12px",
+          padding: "18px 14px",
+          gap: "16px",
           overflow: "hidden",
         }}>
 
@@ -117,7 +117,7 @@ export default function BingoPage() {
             priority
           />
 
-          <div style={{ fontSize: "8px", color: G.mid, letterSpacing: "4px", fontWeight: 700 }}>
+          <div style={{ fontSize: "clamp(12px, 1.3vw, 16px)", color: G.mid, letterSpacing: "4px", fontWeight: 700 }}>
             BOLA ATUAL
           </div>
 
@@ -154,10 +154,10 @@ export default function BingoPage() {
                     background: "radial-gradient(ellipse, rgba(255,255,255,0.52) 0%, transparent 100%)",
                     pointerEvents: "none",
                   }} />
-                  <span style={{ color: "rgba(255,255,255,0.88)", fontSize: "clamp(10px, 1.4vw, 17px)", fontWeight: 900, letterSpacing: "5px", lineHeight: 1 }}>
+                  <span style={{ color: "rgba(255,255,255,0.92)", fontSize: "clamp(14px, 1.8vw, 22px)", fontWeight: 900, letterSpacing: "6px", lineHeight: 1 }}>
                     {lastLetter}
                   </span>
-                  <span style={{ color: "white", fontSize: "clamp(30px, 4.6vw, 60px)", fontWeight: 900, lineHeight: 0.9, textShadow: "0 3px 10px rgba(0,0,0,0.35)" }}>
+                  <span style={{ color: "white", fontSize: "clamp(40px, 6vw, 76px)", fontWeight: 900, lineHeight: 0.9, textShadow: "0 3px 10px rgba(0,0,0,0.35)" }}>
                     {lastBall}
                   </span>
                 </>
