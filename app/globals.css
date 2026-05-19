@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  height: 100%;
+  font-family: "Arial Black", "Arial Bold", Arial, sans-serif;
+  background: #faf9f6;
+  overflow: hidden;
+}
+
+@keyframes ballPop {
+  0%   { transform: scale(0.15) rotate(-20deg); opacity: 0; }
+  55%  { transform: scale(1.2)  rotate(5deg);  opacity: 1; }
+  75%  { transform: scale(0.95) rotate(-2deg); }
+  100% { transform: scale(1)    rotate(0deg);  opacity: 1; }
+}
+
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.ball-pop { animation: ballPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+
+.cell-btn { transition: transform 0.14s ease, box-shadow 0.14s ease; }
+.cell-btn:hover { transform: scale(1.08); z-index: 2; }
+
+.ticker-scroll {
+  display: inline-block;
+  white-space: nowrap;
+  animation: ticker 75s linear infinite;
+}
+
+button { font-family: inherit; }
