@@ -87,29 +87,9 @@ export default function BingoPage() {
         borderBottom: `3px solid ${G.mid}`,
       }}>
 
-        <div style={{ display: "flex", alignItems: "center" }}>
-          {/* BINGO — texto em ouro degradê */}
-          <span style={{
-            background: `linear-gradient(175deg, ${G.lo} 0%, ${G.hi} 30%, ${G.mid} 60%, ${G.dk} 100%)`,
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            backgroundClip: "text",
-            color: "transparent",
-            fontSize: "clamp(44px, 7.5vw, 100px)",
-            fontWeight: 900,
-            letterSpacing: "clamp(8px, 1.6vw, 22px)",
-            lineHeight: 1,
-            display: "block",
-          }}>
-            BINGO
-          </span>
-
-        </div>
-
-        {/* Subtítulo — grande e nobre */}
         <div style={{
           color: NAVY,
-          fontSize: "clamp(16px, 2.1vw, 30px)",
+          fontSize: "clamp(18px, 2.6vw, 38px)",
           fontWeight: 900,
           letterSpacing: "clamp(3px, 0.8vw, 10px)",
           textAlign: "center",
@@ -142,7 +122,7 @@ export default function BingoPage() {
             alt="Santuário Nossa Senhora Aparecida"
             width={200}
             height={200}
-            style={{ objectFit: "contain", height: "clamp(70px, 10vw, 120px)", width: "auto" }}
+            style={{ objectFit: "contain", height: "clamp(90px, 14vw, 160px)", width: "auto" }}
             priority
           />
 
