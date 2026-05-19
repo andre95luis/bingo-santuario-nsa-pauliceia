@@ -89,7 +89,7 @@ export default function BingoPage() {
 
         <div style={{
           color: NAVY,
-          fontSize: "clamp(18px, 2.6vw, 38px)",
+          fontSize: "clamp(19px, 2.8vw, 42px)",
           fontWeight: 900,
           letterSpacing: "clamp(3px, 0.8vw, 10px)",
           textAlign: "center",
