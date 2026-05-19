@@ -4,6 +4,9 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "BINGO – Santuário Nossa Senhora Aparecida · Paulicéia",
   description: "Sistema de Bingo para a Quermesse do Santuário NSA Paulicéia",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
