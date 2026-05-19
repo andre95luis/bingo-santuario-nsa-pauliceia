@@ -32,11 +32,11 @@ function letterOf(n: number): Letter {
 
 const TICKER =
   "          ✦          Gostou deste sistema?   Foi criado pela  SAFE VISION BR" +
-  "          ✦          Soluções de TI para igrejas, empresas e eventos" +
-  "          ✦          Sites · Sistemas · Automações · e muito mais" +
+  "          ✦          Soluções de TI para o seu local!" +
+  "          ✦          Sites · Sistemas de seugrança · Automações · e muito mais" +
   "          ✦          Conheça tudo em:   www.safevisionbr.com.br" +
   "          ✦          WhatsApp:   (11) 96356-1680" +
-  "          ✦          Seu evento merece isso também.   Fale com a gente!          ";
+  "          ✦          Fale com a gente!";
 
 export default function BingoPage() {
   const [drawn, setDrawn]               = useState<Set<number>>(new Set());
@@ -64,7 +64,7 @@ export default function BingoPage() {
     setDrawn(new Set()); setHistory([]); setAnimKey(0); setConfirmReset(false);
   }, []);
 
-  const recentBalls = [...history].reverse().slice(1, 12);
+  const recentBalls = [...history].reverse().slice(1, 6);
 
   return (
     <div style={{ height: "100vh", display: "flex", flexDirection: "column", background: "#ffffff", overflow: "hidden" }}>
@@ -103,21 +103,22 @@ export default function BingoPage() {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          padding: "18px 14px",
-          gap: "16px",
+          padding: "18px 14px 80px",
+          gap: "40px",
           overflow: "hidden",
+          position: "relative",
         }}>
 
           {/* Logo */}
           <Image
             src="/logo.png"
             alt="Santuário Nossa Senhora Aparecida"
-            width={200} height={200}
+            width={250} height={250}
             style={{ objectFit: "contain", height: "clamp(90px, 14vw, 160px)", width: "auto" }}
             priority
           />
 
-          <div style={{ fontSize: "clamp(12px, 1.3vw, 16px)", color: G.mid, letterSpacing: "4px", fontWeight: 700 }}>
+          <div style={{ fontSize: "clamp(22px, 1.3vw, 16px)", color: G.mid, letterSpacing: "3px", fontWeight: 700 }}>
             BOLA ATUAL
           </div>
 
@@ -213,41 +214,40 @@ export default function BingoPage() {
             </div>
           )}
 
-          <div style={{ flex: 1 }} />
-
-          {allDone && (
-            <div style={{
-              background: `linear-gradient(135deg, ${G.dk}, ${G.mid}, ${G.lo})`,
-              borderRadius: "10px", padding: "8px 12px", textAlign: "center", width: "100%",
-              boxShadow: `0 0 28px ${G.glow}`,
-            }}>
-              <div style={{ fontSize: "16px", fontWeight: 900, color: NAVY, letterSpacing: "2px" }}>JOGO COMPLETO!</div>
-            </div>
-          )}
-
-          {/* Reiniciar */}
-          {!confirmReset ? (
-            <button
-              onClick={() => setConfirmReset(true)}
-              style={{
-                padding: "12px 0", width: "100%", background: "transparent",
-                border: `2px solid ${G.mid}70`, borderRadius: "10px",
-                color: "#94a3b8", cursor: "pointer", fontSize: "14px", fontWeight: 700, letterSpacing: "2px",
-              }}
-              onMouseOver={e => { e.currentTarget.style.borderColor = "#ef4444"; e.currentTarget.style.color = "#ef4444"; }}
-              onMouseOut={e  => { e.currentTarget.style.borderColor = `${G.mid}70`; e.currentTarget.style.color = "#94a3b8"; }}
-            >
-              ↺ REINICIAR JOGO
-            </button>
-          ) : (
-            <div style={{ textAlign: "center", width: "100%" }}>
-              <p style={{ color: "#64748b", fontSize: "13px", marginBottom: "10px", fontWeight: 600 }}>Reiniciar o jogo?</p>
-              <div style={{ display: "flex", gap: "8px" }}>
-                <button onClick={reset} style={{ flex: 1, padding: "12px", background: "#ef4444", color: "white", border: "none", borderRadius: "10px", cursor: "pointer", fontWeight: 700, fontSize: "15px" }}>SIM</button>
-                <button onClick={() => setConfirmReset(false)} style={{ flex: 1, padding: "12px", background: "#e2e8f0", color: "#334155", border: "none", borderRadius: "10px", cursor: "pointer", fontWeight: 700, fontSize: "15px" }}>NÃO</button>
+          {/* Reiniciar — fixado no fundo do painel */}
+          <div style={{ position: "absolute", bottom: "14px", left: "14px", right: "14px" }}>
+            {allDone && (
+              <div style={{
+                background: `linear-gradient(135deg, ${G.dk}, ${G.mid}, ${G.lo})`,
+                borderRadius: "10px", padding: "8px 12px", textAlign: "center",
+                marginBottom: "8px", boxShadow: `0 0 28px ${G.glow}`,
+              }}>
+                <div style={{ fontSize: "16px", fontWeight: 900, color: NAVY, letterSpacing: "2px" }}>JOGO COMPLETO!</div>
               </div>
-            </div>
-          )}
+            )}
+            {!confirmReset ? (
+              <button
+                onClick={() => setConfirmReset(true)}
+                style={{
+                  padding: "12px 0", width: "100%", background: "transparent",
+                  border: `2px solid ${G.mid}70`, borderRadius: "10px",
+                  color: "#94a3b8", cursor: "pointer", fontSize: "14px", fontWeight: 700, letterSpacing: "2px",
+                }}
+                onMouseOver={e => { e.currentTarget.style.borderColor = "#ef4444"; e.currentTarget.style.color = "#ef4444"; }}
+                onMouseOut={e  => { e.currentTarget.style.borderColor = `${G.mid}70`; e.currentTarget.style.color = "#94a3b8"; }}
+              >
+                ↺ REINICIAR JOGO
+              </button>
+            ) : (
+              <div style={{ textAlign: "center" }}>
+                <p style={{ color: "#64748b", fontSize: "13px", marginBottom: "8px", fontWeight: 600 }}>Reiniciar o jogo?</p>
+                <div style={{ display: "flex", gap: "8px" }}>
+                  <button onClick={reset} style={{ flex: 1, padding: "12px", background: "#ef4444", color: "white", border: "none", borderRadius: "10px", cursor: "pointer", fontWeight: 700, fontSize: "15px" }}>SIM</button>
+                  <button onClick={() => setConfirmReset(false)} style={{ flex: 1, padding: "12px", background: "#e2e8f0", color: "#334155", border: "none", borderRadius: "10px", cursor: "pointer", fontWeight: 700, fontSize: "15px" }}>NÃO</button>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
 
         {/* ── GRADE BINGO ── */}
