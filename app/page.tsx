@@ -33,7 +33,7 @@ function letterOf(n: number): Letter {
 const TICKER =
   "          ✦          Gostou deste sistema?   Foi criado pela  SAFE VISION BR" +
   "          ✦          Soluções de TI para o seu local!" +
-  "          ✦          Sites · Sistemas de seugrança · Automações · e muito mais" +
+  "          ✦          Sites · Sistemas de segurança · Automações · e muito mais" +
   "          ✦          Conheça tudo em:   www.safevisionbr.com.br" +
   "          ✦          WhatsApp:   (11) 96356-1680" +
   "          ✦          Fale com a gente!";
